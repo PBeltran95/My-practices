@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Conversor de metros</string>
+    <string name="string_meters">Introduzca sus metros(m)</string>
+    <string name="unit_selection">Seleccione una unidad</string>
+    <string name="image">image</string>
+    <string name="kilometer">Kilometros</string>
+    <string name="hectometer">Hectometro</string>
+    <string name="decameter">Decametro</string>
+    <string name="decimeter">Decimetro</string>
+    <string name="centemeter">Centimetro</string>
+    <string name="milimeter">Milimetro</string>
+    <string name="friendly_message">Presiona el boton para convertir  </string>
+    <string name="button_text">Convertir</string>
+    <string name="result">Resultado</string>
+</resources>

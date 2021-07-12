@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/icontv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_default_meters"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_meters"
+            app:layout_constraintBottom_toBottomOf="@id/til_meters"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/til_meters"
+            app:tint="@color/primaryColor" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_meters"
+            android:layout_width="@dimen/tilmeters"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:helperText="@string/string_meters"
+            app:layout_constraintStart_toEndOf="@id/icontv"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_meters"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/padding_default_meters"
+                android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_selector"
+            android:layout_width="@dimen/tilmeters"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_default_meters"
+            android:layout_marginTop="30dp"
+            android:text="@string/unit_selection"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/til_meters"
+            app:layout_constraintTop_toBottomOf="@id/til_meters" />
+
+        <ImageView
+            android:id="@+id/ic_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_arrows"
+            app:layout_constraintStart_toStartOf="@id/icontv"
+            app:layout_constraintTop_toBottomOf="@id/tv_selector"
+            app:layout_constraintTop_toTopOf="@id/tv_selector"
+            app:tint="@color/primaryColor" />
+
+        <RadioGroup
+            android:id="@+id/unit_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_default_meters"
+            android:checkedButton="@id/cb_kilometer"
+            app:layout_constraintStart_toStartOf="@id/tv_selector"
+            app:layout_constraintTop_toBottomOf="@id/tv_selector">
+
+            <RadioButton
+                android:id="@+id/cb_kilometer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/kilometer" />
+
+            <RadioButton
+                android:id="@+id/cb_hectometer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hectometer" />
+
+            <RadioButton
+                android:id="@+id/cb_decameter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/decameter" />
+
+            <RadioButton
+                android:id="@+id/cb_decimeter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/decimeter" />
+
+            <RadioButton
+                android:id="@+id/cb_centemeter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/centemeter" />
+
+            <RadioButton
+                android:id="@+id/cb_milimeter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/milimeter" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_friendly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margintop_value"
+            android:text="@string/friendly_message"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/til_meters"
+            app:layout_constraintStart_toStartOf="@id/til_meters"
+            app:layout_constraintTop_toBottomOf="@id/unit_options" />
+
+        <ImageView
+            android:id="@+id/ic_friendly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margintop_value"
+            android:src="@drawable/ic_arrow_down"
+            app:layout_constraintStart_toEndOf="@id/tv_friendly"
+            app:layout_constraintTop_toTopOf="@id/tv_friendly"
+            tools:ignore="ContentDescription"
+            app:tint="@color/primaryColor" />
+
+        <ImageView
+            android:id="@+id/ic_friendly2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_down"
+            app:layout_constraintEnd_toStartOf="@id/tv_friendly"
+            app:layout_constraintStart_toStartOf="@id/ic_selector"
+            app:layout_constraintTop_toTopOf="@id/tv_friendly"
+            tools:ignore="ContentDescription"
+            app:tint="@color/primaryColor" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/convert_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_default_meters"
+            android:text="@string/button_text"
+            app:layout_constraintEnd_toEndOf="@id/tv_friendly"
+            app:layout_constraintStart_toStartOf="@id/tv_friendly"
+            app:layout_constraintTop_toBottomOf="@id/tv_friendly" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_result"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="@dimen/textview_default_meters"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margintop_value"
+            android:layout_marginBottom="@dimen/padding_default_meters"
+            app:layout_constraintEnd_toEndOf="@id/tv_friendly"
+            app:layout_constraintStart_toStartOf="@id/tv_friendly"
+            app:layout_constraintTop_toBottomOf="@id/convert_button">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/final_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/result"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_arch"
+            app:layout_constraintBottom_toBottomOf="@id/til_result"
+            app:layout_constraintStart_toStartOf="@id/tv_friendly"
+            app:layout_constraintTop_toTopOf="@id/til_result"
+            tools:ignore="ContentDescription"
+            app:tint="@color/primaryColor" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            app:layout_constraintTop_toBottomOf="@id/til_result"
+            app:layout_constraintStart_toStartOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

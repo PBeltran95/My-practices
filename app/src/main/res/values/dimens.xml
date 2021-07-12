@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textview_default_meters">150dp</dimen>
+    <dimen name="tilmeters">300dp</dimen>
+    <dimen name="margin_top_meters">50dp</dimen>
+    <dimen name="padding_default_meters">16dp</dimen>
+    <dimen name="margintop_value">8dp</dimen>
+    <dimen name="last_icon_margin">25dp</dimen>
+</resources>
