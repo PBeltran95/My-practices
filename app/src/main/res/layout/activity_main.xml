@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/default_min_padding"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_padding"
+            android:text="@string/app_title"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            style="@style/MaterialAlertDialog.MaterialComponents.Title.Panel.CenterStacked"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_hospital"
+            app:layout_constraintTop_toTopOf="@id/tv_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ContentDescription"
+            app:tint="@color/primaryColor" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_hospital"
+            app:layout_constraintTop_toTopOf="@id/tv_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription"
+            app:tint="@color/primaryColor"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weight"
+            android:textSize="40sp"
+            android:layout_marginTop="@dimen/default_padding"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/height"
+            android:textSize="40sp"
+            android:layout_marginTop="@dimen/max_padding"
+            app:layout_constraintStart_toStartOf="@id/tv_weight"
+            app:layout_constraintTop_toBottomOf="@id/tv_weight" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_weight"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_padding"
+            app:helperText="@string/help_weight"
+            app:layout_constraintStart_toStartOf="@id/til_height"
+            app:layout_constraintTop_toTopOf="@id/tv_weight"
+            app:layout_constraintEnd_toEndOf="@id/til_height"
+            app:layout_constraintBottom_toBottomOf="@id/tv_weight">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_height"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_padding"
+            app:helperText="@string/help_height"
+            app:layout_constraintStart_toEndOf="@id/tv_height"
+            app:layout_constraintTop_toTopOf="@id/tv_height"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_height">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_calculate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/calculate"
+            android:layout_marginTop="@dimen/max_padding"
+            android:shadowDx="@android:integer/config_longAnimTime"
+            android:shadowColor="@color/primaryDarkColor"
+            app:layout_constraintTop_toBottomOf="@id/til_height"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_foward_arrow"
+            app:layout_constraintTop_toTopOf="@id/tv_result"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_result"
+            tools:ignore="ContentDescription"
+            app:tint="@color/primaryColor"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_result"
+            app:layout_constraintBottom_toBottomOf="@id/tv_result"
+            tools:ignore="ContentDescription"
+            app:tint="@color/primaryColor"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_padding"
+            android:layout_marginTop="@dimen/max_padding"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="38sp"
+            app:layout_constraintEnd_toEndOf="@id/btn_calculate"
+            app:layout_constraintStart_toStartOf="@id/btn_calculate"
+            app:layout_constraintTop_toBottomOf="@id/btn_calculate"
+            tools:text="27.70" />
+
+        <ImageButton
+            android:id="@+id/ib_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share"
+            android:layout_marginTop="@dimen/fullscreen"
+            android:layout_marginBottom="@dimen/max_padding"
+            android:layout_marginStart="@dimen/max_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/btn_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_info"
+            android:layout_marginStart="@dimen/default_padding"
+            app:layout_constraintTop_toTopOf="@id/ib_share"
+            app:layout_constraintBottom_toBottomOf="@id/ib_share"
+            app:layout_constraintStart_toEndOf="@id/ib_share"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_group"
+            android:layout_marginEnd="@dimen/max_padding"
+            app:layout_constraintTop_toTopOf="@id/ib_share"
+            app:layout_constraintBottom_toBottomOf="@id/ib_share"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription"
+            app:tint="@color/primaryColor"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/default_padding"
+            app:layout_constraintTop_toBottomOf="@id/tv_result"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_veredict"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_padding"
+            android:layout_marginTop="@dimen/max_padding"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="38sp"
+            app:layout_constraintEnd_toEndOf="@id/tv_result"
+            app:layout_constraintStart_toStartOf="@id/tv_result"
+            app:layout_constraintTop_toBottomOf="@id/tv_result"
+            tools:text="Sobrepeso"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

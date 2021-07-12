@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_min_padding">8dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="max_padding">32dp</dimen>
+    <dimen name="fullscreen">160dp</dimen>
+</resources>

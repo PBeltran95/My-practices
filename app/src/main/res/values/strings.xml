@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">IMC Calculator</string>
+    <string name="app_title">Calculadora de Indice de Masa Corporal</string>
+    <string name="weight">Peso</string>
+    <string name="height">Altura</string>
+    <string name="help_weight">En kg</string>
+    <string name="help_height">En m</string>
+    <string name="calculate">Calcular</string>
+    <string name="low_weight">Bajo peso</string>
+    <string name="normal_weight">Peso Normal</string>
+    <string name="over_weight">Sobrepeso</string>
+    <string name="obesity_1">Obesidad de tipo 1</string>
+    <string name="obesity_2">Obesidad de tipo 2</string>
+    <string name="obesity_3">Obesidad de tipo 3</string>
+    <string name="null_error">Por favor, indique su peso y altura.</string>
+    <string name="imc_info_resource">https://es.wikipedia.org/wiki/%C3%8Dndice_de_masa_corporal</string>
+    <string name="and_have">y tengo</string>
+    <string name="my_imc_is">Mi IMC es:</string>
+</resources>
