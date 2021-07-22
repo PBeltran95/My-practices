@@ -1,0 +1,2 @@
+rootProject.name = "VipUser"
+include ':app'
